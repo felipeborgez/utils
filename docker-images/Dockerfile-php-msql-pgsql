@@ -1,0 +1,33 @@
+FROM ppoffice/apache-php-mssql-odbc
+
+RUN apt-get update
+RUN apt-get install -y \
+    libpq-dev \
+    libfreetype6-dev \
+    # libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libpng12-dev
+
+RUN apt-get install -y --fix-missing libmagickwand-dev
+RUN pecl install imagick-beta
+
+RUN docker-php-ext-install -j$(nproc) \
+  gd \
+  zip \
+  bz2 \
+  iconv \
+  mcrypt \
+  mbstring \
+  pdo pgsql pdo_pgsql
+
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+
+RUN apt-get -y install apache2
+
+#Esta permissão é útilizada para manipular (upload e exclusão de) arquivos
+RUN chown -R www-data:www-data /var/www
+
+RUN a2enmod rewrite;
+RUN service apache2 restart
+
+RUN apt-get -y autoremove && apt-get clean

@@ -1,0 +1,5 @@
+#PHP 5.2
+
+FROM seti/php52
+RUN yum update && yum install -y postgresql-libs php-pgsql
+RUN apachectl restart
