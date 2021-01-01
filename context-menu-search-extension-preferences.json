@@ -1,0 +1,38 @@
+[
+  [
+    "-1",
+    "Merriam-Webster",
+    "https://www.merriam-webster.com/dictionary/TESTSEARCH",
+    true
+  ],
+  [
+    "-1",
+    "Cambridge Dictionary",
+    "https://dictionary.cambridge.org/us/dictionary/english/TESTSEARCH",
+    true
+  ],
+  [
+    "-1",
+    "Collins Dictionary",
+    "https://www.collinsdictionary.com/dictionary/english/TESTSEARCH",
+    true
+  ],
+  [
+    "-1",
+    "Google Images",
+    "http://www.google.com/images?q=TESTSEARCH",
+    true
+  ],
+  [
+    "-1",
+    "YouGlish",
+    "https://youglish.com/pronounce/TESTSEARCH/english",
+    true
+  ],
+  [
+    "-1",
+    "Longman Dictionary",
+    "https://www.ldoceonline.com/dictionary/TESTSEARCH",
+    true
+  ]
+]
